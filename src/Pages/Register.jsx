@@ -1,14 +1,29 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext)
+
+    const handleSignUp = e => {
+        e.preventDefault()
+        const form = new FormData(e.currentTarget)
+        const email = form.get('email')
+        const password = form.get('password')
+        createUser(email, password)
+            .then()
+            .catch()
+    }
+
     return (
         <div>
             <Navbar></Navbar>
             <div className="hero mt-10">
                 <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
                     <h1 className="text-2xl font-bold text-center pt-4">Please Sign Up</h1>
-                    <form className="card-body">
+                    <form onSubmit={handleSignUp} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
