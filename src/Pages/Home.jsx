@@ -1,5 +1,6 @@
 import Header from "../Components/Header";
 import LatestNews from "../Components/LatestNews";
+import LeftSidebar from "../Components/LeftSidebar";
 import Navbar from "../Components/Navbar";
 
 const Home = () => {
@@ -8,6 +9,23 @@ const Home = () => {
             <Header></Header>
             <LatestNews></LatestNews>
             <Navbar></Navbar>
+            <div className="grid grid-cols-4">
+
+                {/* Left Side Content */}
+                <div>
+                    <LeftSidebar></LeftSidebar>
+                </div>
+
+                {/* Middle News Content */}
+                <div className="col-span-2">
+
+                </div>
+
+                {/* Right Side Content */}
+                <div>
+
+                </div>
+            </div>
         </div>
     );
 };
