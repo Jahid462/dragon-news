@@ -2,6 +2,7 @@ import Header from "../Components/Header";
 import LatestNews from "../Components/LatestNews";
 import LeftSidebar from "../Components/LeftSidebar";
 import Navbar from "../Components/Navbar";
+import RightSidebar from "../Components/RightSidebar";
 
 const Home = () => {
     return (
@@ -23,7 +24,7 @@ const Home = () => {
 
                 {/* Right Side Content */}
                 <div>
-
+                    <RightSidebar></RightSidebar>
                 </div>
             </div>
         </div>
