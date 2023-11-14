@@ -1,5 +1,6 @@
 import { FaRegBookmark, FaShareAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const NewsContainer = ({ news }) => {
 
@@ -48,3 +49,7 @@ const NewsContainer = ({ news }) => {
 };
 
 export default NewsContainer;
+
+NewsContainer.propTypes = {
+    news:PropTypes.object
+}
