@@ -1,8 +1,9 @@
+import { Outlet } from "react-router-dom";
 
 const Root = () => {
     return (
-        <div>
-            This is Root
+        <div className="p-5 font-Poppins">
+            <Outlet></Outlet>
         </div>
     );
 };
