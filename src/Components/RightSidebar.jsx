@@ -2,8 +2,19 @@ import { FaFacebook, FaGithub, FaGoogle, FaInstagram, FaTwitter } from "react-ic
 import QZone1 from "../assets/qZone1.png"
 import QZone2 from "../assets/qZone2.png"
 import QZone3 from "../assets/qZone3.png"
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const RightSidebar = () => {
+
+    const { loginWithGoogle } = useContext(AuthContext)
+
+    const handleGoogleLogin = () => {
+        loginWithGoogle()
+            .then()
+            .catch()
+    }
+
     return (
         <div className="space-y-12">
 
@@ -11,14 +22,14 @@ const RightSidebar = () => {
             <div className="space-y-3">
                 <h1 className="text-2xl font-semibold">Login With</h1>
                 <div className="space-y-3">
-                    <button className="btn btn-outline w-full"><FaGoogle></FaGoogle>Login with Google</button>
+                    <button onClick={handleGoogleLogin} className="btn btn-outline w-full"><FaGoogle></FaGoogle>Login with Google</button>
                     <button className="btn btn-outline w-full"><FaGithub></FaGithub>Login with Github</button>
                 </div>
             </div>
 
             {/* Login With Social Media */}
             <div className="space-y-3">
-                <h1 className="text-2xl font-semibold">Login With</h1>
+                <h1 className="text-2xl font-semibold">Find Us On</h1>
                 <div className="border-2 rounded-md">
                     <p className="flex items-center gap-2 p-3 border-b-2"><FaFacebook className="text-xl"></FaFacebook>Facebook</p>
                     <p className="flex items-center gap-2 p-3 border-b-2"><FaTwitter className="text-xl"></FaTwitter>Twitter</p>
